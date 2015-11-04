@@ -1,5 +1,6 @@
 # clean out all current data
 User.delete_all
+Comment.delete_all
 
 ferdie = User.create(
   name: "Ferdie Q",
@@ -58,3 +59,10 @@ domo = User.create(
   password:              "123",
   password_confirmation: "123"
 )
+
+
+comment1 = Comment.create(content: "That looks AMAZING!")
+
+comment2 = Comment.create(content: "Nom nom nom!")
+
+comment3 = Comment.create(content: "I WANT NOW!!")
