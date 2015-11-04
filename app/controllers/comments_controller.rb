@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to '/comments'
+      redirect_to '/comments_index'
     else
       render 'new'
     end
