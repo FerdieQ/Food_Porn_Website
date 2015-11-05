@@ -21,8 +21,8 @@ garfield = User.create(
   gender: "M",
   city: "Suburbia",
   country: "USA",
-  password:              "123",
-  password_confirmation: "123"
+  password:              "12345",
+  password_confirmation: "12345"
 )
 
 homer = User.create(
@@ -32,8 +32,8 @@ homer = User.create(
   gender: "M",
   city: "Springfield",
   country: "USA",
-  password:              "123",
-  password_confirmation: "123"
+  password:              "12345",
+  password_confirmation: "12345"
 )
 
 patrick = User.create(
@@ -44,8 +44,8 @@ patrick = User.create(
   city: "Bikini Bottom",
   country: "USA",
   moderator: false,
-  password:              "123",
-  password_confirmation: "123"
+  password:              "12345",
+  password_confirmation: "12345"
 )
 
 domo = User.create(
@@ -56,8 +56,8 @@ domo = User.create(
   city: "Tokyo",
   country: "Japan",
   moderator: false,
-  password:              "123",
-  password_confirmation: "123"
+  password:              "12345",
+  password_confirmation: "12345"
 )
 
 

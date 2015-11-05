@@ -25,13 +25,8 @@ class PhotosController < ApplicationController
       end
   end
 
-  def destroy
-    @photo.destroy
-    respond_to do |format|
-        format.html { redirect_to photos_url, notice: 'Photo was successfully removed.' }
-        format.json { head :no_content }
-    end
-  end
+
+
 
   private
     def set_post

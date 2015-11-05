@@ -2,13 +2,25 @@
 
 <div class="photos">
   <div class="container">
+    <div class="row">
+      <div class="col-xs3"><h1>Photo</h1></div>
+      <div class="col-xs3"><h1>Title</h1></div>
+      <div class="col-xs3"><h1>Comment</h1></div>
+      <div class="col-xs3"><h1>Timestamp</h1></div>
+    </div>
 
-<% @photos.each do |photo| %>
-<div class="photo">
-  <%= photo.title %>
-  <%= image_tag photo.image.url(:medium) %>
+    <% @photos.each do |photo| %>
+<div class="row">
+  <div class="col-xs3">
+    <div class="photo">
+      <%= image_tag photo.image.url(:thumb) %>
+    </div>
+  </div>
+  <div class="col-xs3"><%= photo.title %></div>
+  <div class="col-xs3"><%= photo.comments %></div>
+  <div class="col-xs3"><%= photo.created_at %></div>
 </div>
-<% end %>
+    <% end %>
 
   </div>
 </div>

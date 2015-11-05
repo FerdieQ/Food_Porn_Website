@@ -18,14 +18,20 @@ ActiveRecord::Schema.define(version: 20151104235752) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "photo_id"
   end
+
+  add_index "comments", ["photo_id"], name: "index_comments_on_photo_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "url_link"
     t.string   "comments"
     t.integer  "likes"
+    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -34,6 +40,8 @@ ActiveRecord::Schema.define(version: 20151104235752) do
     t.datetime "image_updated_at"
     t.string   "title"
   end
+
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -48,4 +56,7 @@ ActiveRecord::Schema.define(version: 20151104235752) do
     t.datetime "updated_at",                      null: false
   end
 
+  add_foreign_key "comments", "photos"
+  add_foreign_key "comments", "users"
+  add_foreign_key "photos", "users"
 end

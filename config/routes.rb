@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get 'user_index' => 'users#index'
 
 
-
-
   get '/comments_index' => 'comments#index'
   get '/comments/new' => 'comments#new'
   post 'comments' => 'comments#create'
