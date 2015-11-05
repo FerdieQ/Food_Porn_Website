@@ -18,14 +18,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
+        redirect_to root_path, notice: 'Photo was successfully created.'
       else
-        format.html {render :new }
+        render :new
       end
-    end
   end
 
   def destroy
@@ -41,7 +38,7 @@ class PhotosController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def post_params
-      params.require(:post).permit(:title, :comments, :image)
+    def photo_params
+      params.require(:photo).permit(:title, :comments, :image)
     end
 end
