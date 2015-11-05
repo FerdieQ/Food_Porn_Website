@@ -4,7 +4,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk'
-
+gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'rails', '4.2.4'
 gem 'pg'
