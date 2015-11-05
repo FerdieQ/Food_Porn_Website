@@ -5,7 +5,7 @@ gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk'
 
-
+gem 'rails_12factor', group: :production
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
