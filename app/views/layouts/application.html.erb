@@ -9,10 +9,10 @@
 <body>
 
 <p>
-  <%= link_to 'Home', 'welcome' %>
-  <%= link_to 'About Us', new_user_path %>
   <% if current_user %>
-    Welcome, <%= current_user.name %>
+    Welcome, <%= current_user.name %>!
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Home', 'welcome' %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>
   <% else %>

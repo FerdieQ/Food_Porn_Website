@@ -15,11 +15,8 @@ Rails.application.routes.draw do
   get '/photos_index' => 'photos#index'
   get 'form' => 'photos#form'
 
-
-
-
+  resources :photos, only: [:form, :new, :create]
   resources :users, only: [:index, :new, :create, :destroy]
-
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'

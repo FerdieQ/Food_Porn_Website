@@ -8,23 +8,22 @@ class PhotosController < ApplicationController
   def show
   end
 
-  def new
+  def form
     @photo = Photo.new
   end
 
   def edit
   end
 
+
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
         format.json { render :show, status: :created, location: @photo }
       else
         format.html {render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,6 +42,6 @@ class PhotosController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :image)
+      params.require(:post).permit(:title, :comments, :image)
     end
 end
