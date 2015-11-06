@@ -1,19 +1,17 @@
 <h1>All Users Index</h1>
 <% @users.each do |user| %>
-
-<p>
-  <%= user.name %>
-  <%= user.username %>
-  <%= user.email %>
-  <% if moderator %>
-    - Moderator
-  <% else %>
-    - Not a Moderator
-  <%end %>
-  <% if moderator && (current_user != user) %>
-    <%= link_to "Delete", user_path(user), method: :delete %>
-  <% end %>
-
-</p>
+  <p>
+    <%= user.name %>
+    <%= user.username %>
+    <%= user.email %>
+    <% if moderator %>
+      - Moderator
+    <% else %>
+      - Not a Moderator
+    <%end %>
+    <% if moderator && (current_user != user) %>
+      <%= link_to "Delete", user_path(user), method: :delete %>
+    <% end %>
+  </p>
 <% end %>
 

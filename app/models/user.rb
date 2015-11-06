@@ -8,4 +8,3 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password, length: {in: 4..8}, allow_nil: true
 end
-

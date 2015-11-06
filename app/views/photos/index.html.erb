@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>FoodPorn</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-    <div class="photos">
-      <h3>
-        <%= link_to 'Upload Photos', 'form', class: "btn btn-lg btn-primary" %>
-      </h3>
-      <div class="container">
-        <% @photos.each do |photo| %>
-          <div class="row">
-            <h1><%= photo.title %></h1>
-            <div class="photo">
-            <%= image_tag photo.image.url(:large) %>
-            </div>
+<body>
+  <div class="photos">
+    <h3>
+      <%= link_to 'Upload Photos', 'form', class: "btn btn-lg btn-primary" %>
+    </h3>
+    <div class="container">
+      <% @photos.each do |photo| %>
+        <div class="row">
+          <h1><%= photo.title %></h1>
+          <div class="photo">
+          <%= image_tag photo.image.url(:large) %>
           </div>
-          <div class="edits">
-            <%= link_to 'Edit', edit_photo_path(photo), class: "btn btn-sm btn-primary", type: "button" %>
-            <%= link_to 'Delete', photo_path(photo), :method => :delete, class: "btn btn-sm btn-primary", type: "button" %>
-          </div>
-        <% end %>
-      </div>
+        </div>
+        <div class="edits">
+          <%= link_to 'Edit', edit_photo_path(photo), class: "btn btn-sm btn-primary", type: "button" %>
+          <%= link_to 'Delete', photo_path(photo), :method => :delete, class: "btn btn-sm btn-primary", type: "button" %>
+        </div>
+      <% end %>
     </div>
-  </body>
-</html>
+  </div>
+</body>
+
 
