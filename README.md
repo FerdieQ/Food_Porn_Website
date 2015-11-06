@@ -1,7 +1,7 @@
 #Food Porn Website
 ----
 
-![food](screenshot.png =300x)
+![food](/screenshot.png =300x)
 
 ###[Github Link](https://github.com/FerdieQ/Food_Porn_Website.git)
 
