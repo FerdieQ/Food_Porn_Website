@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   def index
     @photos = Photo.all
@@ -13,6 +13,12 @@ class PhotosController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to photos_path, :notice => "Photo Deleted"
   end
 
 
@@ -29,8 +35,8 @@ class PhotosController < ApplicationController
 
 
   private
-    def set_post
-      @post = Post.find(params[:id])
+    def set_photo
+      @photo = Photo.find(params[:id])
     end
 
     def photo_params
