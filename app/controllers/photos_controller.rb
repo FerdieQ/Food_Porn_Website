@@ -3,9 +3,11 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @comments = Comment.all
   end
 
   def show
+    @photo = Photo.find(params[:id])
   end
 
   def form
@@ -13,6 +15,16 @@ class PhotosController < ApplicationController
   end
 
   def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    if @photo.update_attributes(photo_params)
+      redirect_to photos_path, notice: 'Photo successfully changed.'
+    else
+      render edit_photo_path
+    end
   end
 
   def destroy
