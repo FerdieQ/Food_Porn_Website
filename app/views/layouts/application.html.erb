@@ -16,7 +16,7 @@
             <% if current_user %>
               Welcome, <%= current_user.name %>
               &nbsp;&nbsp;|&nbsp;&nbsp;
-              <%= link_to 'Home', 'members' %>
+              <%= link_to 'Home', photos_path %>
               &nbsp;&nbsp;|&nbsp;&nbsp;
               <%= link_to 'Logout', session_path('dummy'), method: :delete %>
             <% else %>
