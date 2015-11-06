@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  #relationships to comments and users
   has_many :comments
   belongs_to :user
 
