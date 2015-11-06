@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/photos_index' => 'photos#index'
   get 'form' => 'photos#form'
 
-  resources :photos, only: [:form, :index, :create, :edit, :destroy]
+  resources :photos
   resources :comments
   resources :users, only: [:index, :new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]

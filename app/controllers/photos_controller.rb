@@ -3,7 +3,6 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
-    @comments = Comment.all
   end
 
   def show

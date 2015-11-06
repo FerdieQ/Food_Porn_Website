@@ -14,23 +14,9 @@
       </div>
 
       <p>
-        <%= link_to 'Edit', edit_photo_path(photo), :method => :get %>
+        <%= link_to 'Edit', edit_photo_path(photo) %>
         <%= link_to 'Delete', photo_path(photo), :method => :delete %>
       </p>
-
-      <div class="comments">
-      <div class="container">
-        <% @comments.each do |comment| %>
-      <div class="comment">
-        <p class="content"><%= comment.content %></p>
-        <p class="time"><%= comment.created_at %></p>
-      </div>
-        <% end %>
-      <p>
-      <%= link_to 'New Comment', "comments/new" %>
-      </p>
-      </div>
-      </div>
     <% end %>
   </div>
 
